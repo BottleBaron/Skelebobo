@@ -35,9 +35,9 @@ namespace TheChuck.Pages
             try
             {
                 var joke = await _jokeService.GetRandomJoke();
-                DisplayText = joke?.Value ?? "";
+                DisplayText = joke?.Value.ToUpper() ?? "";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
 
